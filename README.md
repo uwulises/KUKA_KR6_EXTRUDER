@@ -1,1 +1,1 @@
-# KUKA_RS232_MQTT
+# KUKA_KR6 Método para extruir desde .stl
