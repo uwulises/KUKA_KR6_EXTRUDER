@@ -22,8 +22,10 @@ krl.create_KRL_file()
 krl.add_line_to_src_file("; USER POSES CALLS \n")
 # TODO: Call the first pose from setup config and save a new json file with the new starting pose
 krl.add_line_to_src_file("PTP {X 75, Y 30, Z 420, A 0, B 90, C 0} \n")
-krl.add_line_to_src_file("WAIT SEC 5 \n")
 krl.add_line_to_src_file("; USER POSES CALLS \n")
+krl.add_line_to_src_file("LIN {X " + str(positions[0][0]) + ", Y " + str(positions[0][1]) + ", Z " + str(
+        positions[0][2]+5) + ", A " + str(0) + ", B " + str(90) + ", C " + str(0) + "} C_DIS\n")
+krl.add_line_to_src_file("WAIT SEC 1 \n")
 krl.add_line_to_src_file("$OUT[1] = TRUE \n")
 for pose in positions:
     krl.add_line_to_src_file("LIN {X " + str(pose[0]) + ", Y " + str(pose[1]) + ", Z " + str(
